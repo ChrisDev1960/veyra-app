@@ -1,0 +1,776 @@
+:root {
+  /* Veyra 60 / 30 / 10 */
+  --background: #F8FAF7;
+  --surface: #FFFFFF;
+  --surface-soft: #EEF2EF;
+
+  --charcoal: #111827;
+  --text: #111827;
+  --muted: #6B7280;
+
+  --emerald: #10B981;
+  --emerald-dark: #0A8F66;
+
+  --border: #E5E7EB;
+  --white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.app {
+  width: 100%;
+  max-width: 460px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 0 20px 110px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0 28px;
+}
+
+.brand {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--charcoal);
+}
+
+.greeting {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.round-button,
+.profile-button {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 14px rgba(17, 24, 39, 0.06);
+}
+
+.round-button svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: var(--charcoal);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.profile-button {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.profile-button span {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--emerald);
+}
+
+
+/* =========================
+   BALANCE CARD
+========================= */
+
+.balance-card {
+  background: var(--charcoal);
+  color: var(--white);
+  border-radius: 27px;
+  padding: 25px;
+  box-shadow: 0 15px 35px rgba(17, 24, 39, 0.15);
+}
+
+.balance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.balance-header span {
+  font-size: 13px;
+  color: #AEB5C2;
+  font-weight: 800;
+}
+
+.eye-button {
+  background: transparent;
+  padding: 4px;
+}
+
+.eye-button svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.balance {
+  margin: 17px 0 23px;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -1.8px;
+}
+
+.balance-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.primary-button,
+.secondary-button {
+  height: 48px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.primary-button {
+  background: var(--emerald);
+  color: var(--white);
+}
+
+.secondary-button {
+  background: #202938;
+  color: var(--white);
+  border: 1px solid #303A4A;
+}
+
+.plus {
+  font-size: 18px;
+  margin-right: 4px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+  margin-top: 31px;
+}
+
+.section-heading {
+  margin-bottom: 14px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: var(--charcoal);
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 11px;
+}
+
+.service-card {
+  min-height: 116px;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 21px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  text-align: left;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.service-card:active {
+  transform: scale(0.97);
+}
+
+.service-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: #E7F7F1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon svg {
+  width: 21px;
+  height: 21px;
+
+  fill: none;
+  stroke: var(--emerald);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-card > span:last-child {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--charcoal);
+}
+
+
+/* =========================
+   ACTIVITY
+========================= */
+
+.activity-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.activity-heading button {
+  background: transparent;
+  color: var(--emerald-dark);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.activity-list {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 21px;
+  overflow: hidden;
+}
+
+.activity {
+  min-height: 76px;
+  padding: 14px 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.activity + .activity {
+  border-top: 1px solid var(--border);
+}
+
+.activity-icon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 13px;
+  background: #E7F7F1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity-icon svg {
+  width: 18px;
+  height: 18px;
+
+  fill: none;
+  stroke: var(--emerald);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.activity-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-info strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--charcoal);
+}
+
+.activity-info span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.amount {
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.negative {
+  color: var(--charcoal);
+}
+
+.positive {
+  color: var(--emerald-dark);
+}
+
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
+
+.bottom-nav {
+  position: fixed;
+  z-index: 20;
+
+  left: 50%;
+  bottom: 12px;
+
+  transform: translateX(-50%);
+
+  width: min(420px, calc(100% - 24px));
+  height: 70px;
+
+  padding: 8px 6px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid var(--border);
+  border-radius: 24px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  box-shadow: 0 12px 35px rgba(17, 24, 39, 0.10);
+}
+
+.nav-item {
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border-radius: 17px;
+}
+
+.nav-item svg {
+  width: 19px;
+  height: 19px;
+
+  fill: none;
+  stroke: var(--emerald);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nav-item span {
+  font-size: 10px;
+  font-weight: 900;
+  color: var(--emerald);
+}
+
+.nav-item.active {
+  background: #E7F7F1;
+}
+
+.nav-item.active svg {
+  stroke: var(--emerald-dark);
+}
+
+.nav-item.active span {
+  color: var(--emerald-dark);
+}
+
+
+/* =========================
+   TAP FEEDBACK
+========================= */
+
+button:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .app {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .balance {
+    font-size: 32px;
+  }
+
+  .service-card {
+    min-height: 108px;
+    padding: 15px;
+  }
+}
+
+
+/* =========================
+   LARGER SCREENS
+========================= */
+
+@media (min-width: 700px) {
+
+  body {
+    padding: 30px 0;
+  }
+
+}
+
+/* ==============================
+   AUTH / REGISTRATION SCREEN
+   ============================== */
+
+.auth-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #f8faf7;
+  overflow-y: auto;
+  padding: 32px 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 10px 0 40px;
+}
+
+.auth-brand {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -1px;
+}
+
+.auth-motto {
+  margin: 4px 0 34px;
+  color: #10b981;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auth-card h1 {
+  margin: 0 0 8px;
+  color: #111827;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.auth-subtitle {
+  margin: 0 0 28px;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+}
+
+.form-group small {
+  display: block;
+  margin-top: 7px;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.terms-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 6px 0 20px;
+  color: #4b5563;
+  font-size: 13px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.terms-row input {
+  width: 17px;
+  height: 17px;
+  margin: 1px 0 0;
+  flex-shrink: 0;
+  accent-color: #10b981;
+}
+
+.auth-message {
+  display: none;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: #fef2f2;
+  color: #dc2626;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.auth-submit {
+  width: 100%;
+  border: none;
+  border-radius: 13px;
+  padding: 15px;
+  background: #10b981;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.auth-submit:active {
+  transform: scale(0.98);
+}
+
+.auth-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-login-link {
+  margin: 22px 0 0;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.auth-login-link button {
+  border: none;
+  background: none;
+  padding: 0;
+  color: #10b981;
+  font-size: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ==============================
+   AUTH SUCCESS MESSAGE
+   ============================== */
+
+.auth-message.success {
+  display: block;
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.auth-message.success::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  vertical-align: -2px;
+}
+
+/* WALLET DASHBOARD */
+
+.wallet-dashboard {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.wallet-balance-card,
+.wallet-pending-card {
+  border-radius: 24px;
+  padding: 24px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.wallet-balance-card {
+  background: #10B981;
+  color: #ffffff;
+}
+
+.wallet-pending-card {
+  background: #F59E0B;
+  color: #ffffff;
+}
+
+.wallet-balance-label {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.wallet-balance-amount,
+.wallet-pending-amount {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.wallet-pending-card p {
+  margin: 8px 0 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.wallet-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.wallet-actions button {
+  flex: 1;
+}
+
+/* ADD MONEY */
+
+.deposit-card {
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.deposit-card h3 {
+  margin: 0 0 16px;
+}
+
+.deposit-method {
+  width: 100%;
+  border: none;
+  background: #F8FAF7;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 12px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.deposit-method strong {
+  font-size: 16px;
+  color: #111827;
+}
+
+.deposit-method span {
+  font-size: 13px;
+  color: #6B7280;
+}
